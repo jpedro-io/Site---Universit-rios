@@ -1,0 +1,9 @@
+# Segredos e arquivos locais
+.env
+.env.local
+node_modules/
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db

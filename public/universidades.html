@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+
+<!-- ============ PARTE 1: <head> ============ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universidades · Transporte dos Universitários de Divisa Alegre</title>
+<meta name="description" content="Principais universidades atendidas pelo transporte universitário de Divisa Alegre - MG, em Vitória da Conquista (BA).">
+<meta name="theme-color" content="#0a1436">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<!-- ============ FIM DA PARTE 1 ============ -->
+</head>
+<body>
+
+<!-- ============ PARTE 2: CABECALHO ============ -->
+<header class="cabecalho">
+  <button class="menu-botao" aria-label="Abrir menu de navegação" aria-controls="menu-principal" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="cabecalho__logo" href="index.html" aria-label="Página inicial">
+    <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
+  </a>
+  <a class="cabecalho__voltar" href="index.html">Início</a>
+</header>
+<!-- ============ FIM DA PARTE 2 ============ -->
+
+<!-- ============ PARTE 3: MENU LATERAL ============ -->
+<nav class="menu" id="menu-principal" aria-label="Menu principal">
+  <p class="menu__titulo">Navegação</p>
+  <a href="index.html">Página inicial</a>
+  <a href="regras.html">Regras e Critérios</a>
+  <a href="universidades.html" class="ativo">Universidades</a>
+  <a href="manual.html">Manual dos Universitários</a>
+  <div class="menu__rodape">
+    <img src="img/logo-contorno.png" alt="">
+    <p>Saída da esquina da prefeitura às 16:20.</p>
+  </div>
+</nav>
+<button class="fundo-menu" aria-label="Fechar menu" tabindex="-1"></button>
+<!-- ============ FIM DA PARTE 3 ============ -->
+
+<main>
+
+  <!-- ============ PARTE 4: TITULO DA PAGINA ============ -->
+  <section class="faixa">
+    <div class="container">
+      <h1>Universidades</h1>
+      <p>As principais instituições atendidas pelo transporte, todas em Vitória da Conquista (BA).</p>
+    </div>
+  </section>
+  <!-- ============ FIM DA PARTE 4 ============ -->
+
+  <section class="secao">
+    <div class="container">
+
+      <div class="revelar">
+        <span class="secao__etiqueta">Instituições atendidas</span>
+        <h2 class="secao__titulo">Onde nossos universitários estudam</h2>
+        <p class="secao__subtitulo">Endereço, ano de fundação em Vitória da Conquista e principais cursos de cada instituição.</p>
+      </div>
+
+      <!-- ============ PARTE 5: CARTOES DAS FACULDADES ============ -->
+      <!-- A grade de cartoes e controlada pela classe "grade-universidades" (css/style.css, SECAO 8) -->
+      <div class="grade-universidades">
+
+        <!-- ===== CARD 1 de 7: FACULDADE ANHANGUERA ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/anhanguera.jpg" alt="Fachada da Faculdade Anhanguera em Vitória da Conquista" loading="lazy">
+            <span class="universidade__sigla">Anhanguera</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">Faculdade Anhanguera</h3>
+            <!-- Cada linha abaixo e um dado: <dt> e o rotulo, <dd> e o texto -->
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>Av. José Pedral Sampaio, 1000, Bairro Candeias.</dd></div>
+              <div><dt>Fundação</dt><dd>2018, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Enfermagem, Fisioterapia, Engenharia Civil, Administração, Psicologia e Ciências Contábeis.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== CARD 2 de 7: IFBA ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/ifba.jpg" alt="Entrada do Instituto Federal da Bahia, campus Vitória da Conquista" loading="lazy">
+            <span class="universidade__sigla">IFBA</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">Instituto Federal da Bahia (IFBA) — Campus Vitória da Conquista</h3>
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>Av. Sérgio Vieira de Mello, 3150, Bairro Zabelê.</dd></div>
+              <div><dt>Fundação</dt><dd>1995, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Engenharia Elétrica, Engenharia Civil, Engenharia Ambiental, Licenciatura em Química, Sistemas de Informação e Cursos Técnicos.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== CARD 3 de 7: UNEX ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/unex.jpg" alt="Fachada do Centro Universitário de Excelência (UNEX)" loading="lazy">
+            <span class="universidade__sigla">UNEX</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">UNEX — Centro Universitário de Excelência</h3>
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>R. Ubaldino Figueira, 200, Bairro Recreio.</dd></div>
+              <div><dt>Fundação</dt><dd>2004, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Medicina, Psicologia, Odontologia, Medicina Veterinária, Direito e Enfermagem.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== CARD 4 de 7: UNOPAR ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/unopar.jpg" alt="Entrada da Unopar em Vitória da Conquista" loading="lazy">
+            <span class="universidade__sigla">Unopar</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">Unopar — Universidade Norte do Paraná</h3>
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>Av. Siqueira Campos, 1221, Bairro Recreio.</dd></div>
+              <div><dt>Fundação</dt><dd>2007, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Pedagogia, Administração, Análise e Desenvolvimento de Sistemas, Ciências Contábeis e Serviço Social.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== CARD 5 de 7: FAINOR ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/fainor.jpg" alt="Fachada da Faculdade Independente do Nordeste (FAINOR)" loading="lazy">
+            <span class="universidade__sigla">FAINOR</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">Faculdade Independente do Nordeste (FAINOR)</h3>
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>Av. Luís Eduardo Magalhães, 1305, Bairro Candeias.</dd></div>
+              <div><dt>Fundação</dt><dd>2001, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Direito, Engenharia Civil, Psicologia, Odontologia, Enfermagem, Arquitetura e Urbanismo e Administração.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== CARD 6 de 7: FASA / UNINASSAU ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/fasa-uninassau.jpg" alt="Fachada do Shopping Boulevard, unidade FASA / UNINASSAU" loading="lazy">
+            <span class="universidade__sigla">FASA / UNINASSAU</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">FASA / UNINASSAU — Unidade Boulevard</h3>
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>Av. Olívia Flores, 2500 (Shopping Boulevard), Bairro Candeias.</dd></div>
+              <div><dt>Fundação</dt><dd>2017, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Odontologia, Direito, Enfermagem, Estética e Cosmética, Psicologia, Biomedicina e Nutrição.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== CARD 7 de 7: UESB ===== -->
+        <article class="universidade revelar">
+          <div class="universidade__foto">
+            <img src="img/uesb.jpg" alt="Portaria da Universidade Estadual do Sudoeste da Bahia (UESB)" loading="lazy">
+            <span class="universidade__sigla">UESB</span>
+          </div>
+          <div class="universidade__corpo">
+            <h3 class="universidade__nome">Universidade Estadual do Sudoeste da Bahia (UESB)</h3>
+            <dl class="dados">
+              <div><dt>Endereço</dt><dd>Estrada do Bem Querer, km 04, Bairro Universitário.</dd></div>
+              <div><dt>Fundação</dt><dd>1980, em Vitória da Conquista.</dd></div>
+              <div><dt>Cursos</dt><dd>Medicina, Direito, Agronomia, Cinema e Audiovisual, Engenharia Agronômica e Licenciaturas.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <!-- ===== COLE AQUI UMA FACULDADE NOVA (copie um <article> inteiro acima) ===== -->
+
+      </div>
+      <!-- ============ FIM DA PARTE 5 ============ -->
+
+    </div>
+  </section>
+</main>
+
+<!-- ============ PARTE 6: RODAPE ============ -->
+<footer class="rodape">
+  <div class="container">
+    <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
+    <nav aria-label="Rodapé">
+      <a href="index.html">Página inicial</a>
+      <a href="regras.html">Regras e Critérios</a>
+      <a href="universidades.html">Universidades</a>
+      <a href="manual.html">Manual dos Universitários</a>
+    </nav>
+    <small>Comissão de Transporte dos Universitários de Divisa Alegre - MG · <span data-ano></span></small>
+  </div>
+</footer>
+<!-- ============ FIM DA PARTE 6 ============ -->
+
+<div class="transicao" aria-hidden="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

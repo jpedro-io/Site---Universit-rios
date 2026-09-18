@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+
+<!-- ============ PARTE 1: <head> ============ -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regras e Critérios · Transporte dos Universitários de Divisa Alegre</title>
+<meta name="description" content="Critérios de lista e avisos do transporte universitário de Divisa Alegre - MG.">
+<meta name="theme-color" content="#0a1436">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<!-- ============ FIM DA PARTE 1 ============ -->
+</head>
+<body>
+
+<!-- ============ PARTE 2: CABECALHO ============ -->
+<header class="cabecalho">
+  <button class="menu-botao" aria-label="Abrir menu de navegação" aria-controls="menu-principal" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="cabecalho__logo" href="index.html" aria-label="Página inicial">
+    <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
+  </a>
+  <!-- Atalho "Início" que aparece no canto direito (some no celular) -->
+  <a class="cabecalho__voltar" href="index.html">Início</a>
+</header>
+<!-- ============ FIM DA PARTE 2 ============ -->
+
+<!-- ============ PARTE 3: MENU LATERAL ============ -->
+<nav class="menu" id="menu-principal" aria-label="Menu principal">
+  <p class="menu__titulo">Navegação</p>
+  <a href="index.html">Página inicial</a>
+  <a href="regras.html" class="ativo">Regras e Critérios</a>
+  <a href="universidades.html">Universidades</a>
+  <a href="manual.html">Manual dos Universitários</a>
+  <div class="menu__rodape">
+    <img src="img/logo-contorno.png" alt="">
+    <p>Saída da esquina da prefeitura às 16:20.</p>
+  </div>
+</nav>
+<button class="fundo-menu" aria-label="Fechar menu" tabindex="-1"></button>
+<!-- ============ FIM DA PARTE 3 ============ -->
+
+<main>
+
+  <!-- ============ PARTE 4: TITULO DA PAGINA (faixa azul) ============ -->
+  <!-- Para mudar o texto grande, edite o <h1>; o texto menor fica no <p>. -->
+  <section class="faixa">
+    <div class="container">
+      <h1>Regras e Critérios</h1>
+      <p>Como funciona a ordem da lista e os avisos importantes para quem usa o transporte todos os dias.</p>
+    </div>
+  </section>
+  <!-- ============ FIM DA PARTE 4 ============ -->
+
+  <section class="secao">
+    <div class="container regras-caixa">
+
+      <!-- ============ PARTE 5: CRITERIOS DE LISTA ============ -->
+      <!-- A numeracao 1, 2, 3... e automatica: basta adicionar ou remover <li> -->
+      <div class="revelar">
+        <span class="secao__etiqueta">Ordem de prioridade</span>
+        <h2 class="secao__titulo">Critérios de Lista</h2>
+        <p class="secao__subtitulo">A ordem abaixo define quem entra primeiro na van.</p>
+      </div>
+
+      <ol class="criterios">
+        <li class="revelar">Prova / Estágio</li>
+        <li class="revelar">Quem volta / com justificativa <em>(ida não é prioridade)</em></li>
+        <li class="revelar">Quem faz uso há mais tempo do transporte</li>
+        <li class="revelar">Por ordem de semestre (do 10° ao 1°)</li>
+        <li class="revelar">Primeira graduação (tem que ser graduação)</li>
+        <li class="revelar">Utilize mais dias na semana</li>
+      </ol>
+      <!-- ============ FIM DA PARTE 5 ============ -->
+
+      <!-- Titulo com a linha ao lado (o <span> vazio desenha a linha) -->
+      <div class="revelar">
+        <h3 class="bloco-titulo">Avisos<span></span></h3>
+      </div>
+
+      <!-- ============ PARTE 6: AVISOS ============ -->
+      <!-- Dica: coloque a classe "destaque" no <li> para realcar o aviso em azul/amarelo -->
+      <ul class="avisos">
+        <li class="revelar destaque">Saída da esquina da prefeitura às <b>16:20</b>.</li>
+        <li class="revelar">Por favor, colocar o nome na lista até as <b>10h da manhã</b>. Com exceção de aula marcada de última hora.</li>
+        <li class="revelar">A entrada no transporte é por ordem de chegada ao ponto e volta no mesmo assento que foi.</li>
+        <li class="revelar">Grupo exclusivo para uso dos universitários e motorista.</li>
+        <li class="revelar">Carona não é prioridade; universitários entram na van antes de carona.</li>
+        <li class="revelar destaque">Alunos residentes e com documento de Divisa ou que possuem o documento em Divisa: <b>prioridade máxima</b>.</li>
+        <li class="revelar">Alunos residentes em Divisa mas sem documento: <b>prioridade média</b>.</li>
+        <li class="revelar">Alunos residentes em outras cidades e sem documento de Divisa: <b>carona</b>.</li>
+      </ul>
+      <!-- ============ FIM DA PARTE 6 ============ -->
+
+    </div>
+  </section>
+</main>
+
+<!-- ============ PARTE 7: RODAPE ============ -->
+<footer class="rodape">
+  <div class="container">
+    <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
+    <nav aria-label="Rodapé">
+      <a href="index.html">Página inicial</a>
+      <a href="regras.html">Regras e Critérios</a>
+      <a href="universidades.html">Universidades</a>
+      <a href="manual.html">Manual dos Universitários</a>
+    </nav>
+    <small>Comissão de Transporte dos Universitários de Divisa Alegre - MG · <span data-ano></span></small>
+  </div>
+</footer>
+<!-- ============ FIM DA PARTE 7 ============ -->
+
+<div class="transicao" aria-hidden="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

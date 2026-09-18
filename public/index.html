@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     ARQUIVO: public/index.html   ->   PAGINA INICIAL (a porta de entrada)
+     ===================================================================== -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comissão de Transporte dos Universitários de Divisa Alegre - MG</title>
+<meta name="description" content="Transporte universitário de Divisa Alegre (MG) para Vitória da Conquista (BA): clima, rota e informações para os universitários.">
+<meta name="theme-color" content="#0a1436">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CABECALHO -->
+<header class="cabecalho">
+  <button class="menu-botao" aria-label="Abrir menu de navegação" aria-controls="menu-principal" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="cabecalho__logo" href="index.html" aria-label="Página inicial">
+    <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
+  </a>
+</header>
+
+<!-- MENU LATERAL -->
+<nav class="menu" id="menu-principal" aria-label="Menu principal">
+  <p class="menu__titulo">Navegação</p>
+  <a href="index.html" class="ativo">Página inicial</a>
+  <a href="regras.html">Regras e Critérios</a>
+  <a href="universidades.html">Universidades</a>
+  <a href="manual.html">Manual dos Universitários</a>
+  <div class="menu__rodape">
+    <img src="img/logo-contorno.png" alt="">
+    <p>Saída da esquina da prefeitura às 16:20.</p>
+  </div>
+</nav>
+<button class="fundo-menu" aria-label="Fechar menu" tabindex="-1"></button>
+
+<main>
+  <!-- SEÇÃO DA FOTO E CLIMA -->
+  <section class="heroi">
+    <div class="heroi__foto" aria-hidden="true"></div>
+    <div class="heroi__sombra" aria-hidden="true"></div>
+
+    <div class="heroi__conteudo">
+      <h1 class="heroi__frase">TRANSPORTE UNIVERSITÁRIO DE DIVISA ALEGRE</h1>
+
+      <div class="clima" role="region" aria-label="Clima em Vitória da Conquista">
+        <div id="clima-conteudo">
+          <p class="clima__carregando">Carregando o clima de Vitória da Conquista...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE INFORMAÇÕES -->
+  <section class="informacoes container" style="padding: 4rem 1.5rem;">
+    <p class="informacoes__chapeu" style="font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; color: #0a1436; text-transform: uppercase; margin-bottom: 0.5rem;">Informações</p>
+    <h2 class="informacoes__titulo" style="font-size: 1.75rem; color: #0a1436; margin-bottom: 1rem;">Tudo o que o universitário precisa saber</h2>
+    <p class="informacoes__descricao" style="color: #4a5568; margin-bottom: 2rem; max-width: 600px;">Consulte as regras de uso do transporte, conheça as universidades atendidas em Vitória da Conquista e veja as ferramentas e documentos indicados para os estudantes.</p>
+
+    <div class="informacoes__grid" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      
+      <!-- Card Regras -->
+      <div class="card-info" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem;">
+        <h3 style="font-size: 1.25rem; color: #0a1436; margin-bottom: 0.75rem;">Regras e critérios</h3>
+        <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 0.95rem;">Ordem de prioridade da lista, avisos sobre horários, entrada no transporte e o que é considerado prioridade máxima, média ou carona.</p>
+        <a href="regras.html" class="botao-secundario" style="display: inline-block; padding: 0.5rem 1rem; border: 1px solid #0a1436; border-radius: 20px; color: #0a1436; text-decoration: none; font-weight: 600;">Ver as regras</a>
+      </div>
+
+      <!-- Card Universidades -->
+      <div class="card-info" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem;">
+        <h3 style="font-size: 1.25rem; color: #0a1436; margin-bottom: 0.75rem;">Universidades</h3>
+        <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 0.95rem;">Sete instituições atendidas em Vitória da Conquista, com endereço, ano de fundação na cidade e os principais cursos de cada uma.</p>
+        <a href="universidades.html" class="botao-secundario" style="display: inline-block; padding: 0.5rem 1rem; border: 1px solid #0a1436; border-radius: 20px; color: #0a1436; text-decoration: none; font-weight: 600;">Ver as universidades</a>
+      </div>
+
+      <!-- Card Manual -->
+      <div class="card-info" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem;">
+        <h3 style="font-size: 1.25rem; color: #0a1436; margin-bottom: 0.75rem;">Manual dos Universitários</h3>
+        <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 0.95rem;">Plataformas de estudo com certificado, ferramentas de organização e produtividade e o modelo de declaração de atraso no transporte.</p>
+        <a href="manual.html" class="botao-secundario" style="display: inline-block; padding: 0.5rem 1rem; border: 1px solid #0a1436; border-radius: 20px; color: #0a1436; text-decoration: none; font-weight: 600;">Abrir o manual</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- RODAPE -->
+<footer class="rodape">
+  <div class="container">
+    <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
+    <nav aria-label="Rodapé">
+      <a href="index.html">Página inicial</a>
+      <a href="regras.html">Regras e Critérios</a>
+      <a href="universidades.html">Universidades</a>
+      <a href="manual.html">Manual dos Universitários</a>
+    </nav>
+    <small>Comissão de Transporte dos Universitários de Divisa Alegre - MG · <span data-ano></span></small>
+  </div>
+</footer>
+
+<div class="transicao" aria-hidden="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

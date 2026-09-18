@@ -1,0 +1,624 @@
+
+:root {
+  --azul-royal: #1b3aa0;
+  --azul-vivo: #2a56d6;
+  --azul-claro: #eaf0ff;
+  --azul-noite: #0a1436;
+  --azul-noite-2: #101e52;
+  --preto: #0b0b0f;
+  --branco: #ffffff;
+  --cinza-1: #f5f7fc;
+  --cinza-linha: #e2e7f3;
+  --texto: #16181f;
+  --texto-suave: #555b6e;
+  --ambar: #f0b429;
+
+  --altura-cabecalho: 100px;
+  --raio: 18px;
+  --sombra: 0 18px 45px rgba(10, 20, 54, 0.12);
+  --sombra-forte: 0 30px 70px rgba(6, 12, 34, 0.45);
+  --transicao: 0.45s cubic-bezier(0.22, 0.68, 0.24, 1);
+  --fonte: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  color: var(--texto);
+  background: var(--branco);
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+body.pronto { opacity: 1; }
+body.saindo { opacity: 0; }
+
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.5em; letter-spacing: -0.02em; }
+p { margin: 0 0 1em; }
+a { color: var(--azul-royal); }
+
+.container { width: min(1140px, 100% - 2.5rem); margin-inline: auto; }
+
+/* =====================================================================
+   SECAO 2 - CABECALHO FIXO COM A LOGO (aparece em todas as paginas)
+   Muda altura da barra, cor de fundo e tamanho da logo em .cabecalho__logo img
+   ===================================================================== */
+/* =====================================================================
+   SECAO 2 - CABECALHO FIXO COM A LOGO (aparece em todas as paginas)
+   ===================================================================== */
+.cabecalho {
+  position: fixed !important;
+  inset: 0 0 auto 0 !important;
+  height: 110px !important; /* Altura generosa para o cabeçalho */
+  z-index: 60;
+  background: rgba(10, 20, 54, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cabecalho__logo { display: inline-flex; align-items: center; }
+.cabecalho__logo img {
+  height: 110px !important; /* Tamanho grande e destacado para a logo */
+  width: auto !important;
+  max-height: none !important;
+  display: block;
+  transition: transform var(--transicao);
+}
+.cabecalho__logo:hover img { transform: scale(1.04); }
+
+.menu-botao {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transicao), border-color var(--transicao);
+}
+.menu-botao:hover { background: rgba(255, 255, 255, 0.18); }
+.menu-botao:focus-visible { outline: 2px solid var(--branco); outline-offset: 3px; }
+.menu-botao span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--branco);
+  transition: transform var(--transicao), opacity 0.25s ease;
+}
+body.menu-aberto .menu-botao span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.menu-aberto .menu-botao span:nth-child(2) { opacity: 0; }
+body.menu-aberto .menu-botao span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.cabecalho__voltar {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background var(--transicao), color var(--transicao);
+}
+.cabecalho__voltar:hover { background: rgba(255, 255, 255, 0.14); color: var(--branco); }
+
+/* =====================================================================
+   SECAO 3 - MENU LATERAL (abre pelo botao hamburguer)
+   Muda largura, cor e itens do menu (os itens estao nos arquivos .html)
+   ===================================================================== */
+.menu {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: min(320px, 86vw);
+  background: linear-gradient(180deg, var(--azul-noite-2), var(--azul-noite));
+  z-index: 70;
+  transform: translateX(-102%);
+  transition: transform var(--transicao);
+  padding: calc(var(--altura-cabecalho) + 26px) 26px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 30px 0 60px rgba(4, 8, 24, 0.45);
+}
+body.menu-aberto .menu { transform: translateX(0); }
+
+.menu__titulo {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.menu a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 1.02rem;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border-left: 3px solid transparent;
+  transition: background var(--transicao), border-color var(--transicao), padding-left var(--transicao);
+}
+.menu a:hover { background: rgba(255, 255, 255, 0.1); padding-left: 22px; }
+.menu a.ativo {
+  background: rgba(255, 255, 255, 0.14);
+  border-left-color: var(--ambar);
+  font-weight: 600;
+}
+.menu__rodape {
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.menu__rodape img { height: 100px; width: auto; margin-bottom: 10px; }
+
+.fundo-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 24, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transicao);
+  z-index: 65;
+  border: 0;
+  padding: 0;
+}
+body.menu-aberto .fundo-menu { opacity: 1; pointer-events: auto; }
+
+/* =====================================================================
+   SECAO 4 - PAGINA INICIAL (index.html)
+   .heroi__foto   - a foto da van (o arquivo troca em public/img/van.jpg)
+   .heroi__sombra - a sombra escura sobre a foto (mude os numeros rgba)
+   .clima         - a caixa de clima
+   .botao-rota    - o botao "Rota para VCA"
+   .rota          - o quadro com o resultado da rota
+   ===================================================================== */
+.heroi {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  padding: calc(var(--altura-cabecalho) + 46px) 20px 60px;
+  overflow: hidden;
+  text-align: center;
+}
+.heroi__foto {
+  position: absolute;
+  inset: 0;
+  background: url("../img/van.jpg") center/cover no-repeat;
+  transform: scale(1.06);
+  animation: aproximar 22s ease-in-out infinite alternate;
+}
+/* sombra escura sobre a foto, como pedido no documento */
+.heroi__sombra {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 12, 34, 0.78) 0%, rgba(6, 12, 34, 0.5) 40%, rgba(6, 12, 34, 0.88) 100%),
+    radial-gradient(circle at 50% 42%, rgba(10, 20, 54, 0.25), rgba(6, 12, 34, 0.85) 78%);
+}
+@keyframes aproximar { from { transform: scale(1.04); } to { transform: scale(1.13); } }
+
+.heroi__conteudo { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+
+.heroi__frase {
+  color: var(--branco);
+  font-size: clamp(1.15rem, 1rem + 1.4vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+  margin: 0;
+  max-width: 22ch;
+}
+
+/* Caixa de clima */
+.clima {
+  width: min(400px, 92vw);
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-forte);
+  padding: 24px 26px 22px;
+  animation: subir 0.8s 0.15s both;
+}
+.clima__topo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.clima__cidade { color: var(--azul-royal); font-weight: 700; }
+.clima__principal { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 10px 0 4px; }
+.clima__icone { width: 62px; height: 62px; flex: none; }
+.clima__temperatura { font-size: clamp(2.4rem, 1.6rem + 3vw, 3.2rem); font-weight: 700; color: var(--azul-noite); line-height: 1; }
+.clima__descricao { color: var(--texto); font-weight: 600; }
+.clima__detalhes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.clima__detalhe {
+  background: var(--cinza-1);
+  border: 1px solid var(--cinza-linha);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 0.86rem;
+  color: var(--texto-suave);
+}
+.clima__detalhe strong { display: block; color: var(--azul-noite); font-size: 1rem; }
+.clima__fonte { margin: 14px 0 0; font-size: 0.72rem; color: #8b90a3; }
+.clima__carregando { color: var(--texto-suave); font-size: 0.95rem; padding: 10px 0; }
+
+@keyframes subir { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* Botão da rota */
+.botao-rota {
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--branco);
+  background: var(--azul-royal);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 14px 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(10, 20, 54, 0.45);
+  transition: transform var(--transicao), background var(--transicao), box-shadow var(--transicao);
+}
+.botao-rota:hover { background: var(--azul-vivo); transform: translateY(-3px); box-shadow: 0 20px 42px rgba(10, 20, 54, 0.55); }
+.botao-rota:active { transform: translateY(-1px); }
+.botao-rota:focus-visible { outline: 2px solid var(--branco); outline-offset: 3px; }
+.botao-rota[disabled] { opacity: 0.75; cursor: progress; transform: none; }
+.botao-rota svg { width: 20px; height: 20px; }
+
+/* Resultado da rota */
+.rota {
+  width: min(560px, 94vw);
+  margin: 0 auto;
+  background: rgba(10, 20, 54, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--raio);
+  padding: 22px 24px;
+  color: var(--branco);
+  box-shadow: var(--sombra-forte);
+  display: none;
+}
+.rota.visivel { display: block; animation: subir 0.5s both; }
+.rota__titulo {
+  font-size: 0.76rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 14px;
+}
+.rota__numeros { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.rota__item {
+  flex: 1 1 150px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 14px;
+}
+.rota__item span { display: block; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
+.rota__item strong { font-size: clamp(1.35rem, 1rem + 1.6vw, 1.8rem); font-weight: 700; }
+.rota__trajeto { margin: 14px 0 0; font-size: 0.9rem; color: rgba(255, 255, 255, 0.82); }
+.rota__fonte { margin: 8px 0 0; font-size: 0.72rem; color: rgba(255, 255, 255, 0.5); }
+.rota__aviso { margin: 0; font-size: 0.92rem; line-height: 1.55; }
+.rota__aviso strong { display: block; margin-bottom: 4px; }
+.rota__aviso code { background: rgba(255, 255, 255, 0.14); padding: 1px 6px; border-radius: 6px; font-size: 0.85em; }
+
+/* =====================================================================
+   SECAO 5 - FAIXA DE TITULO (topo das paginas Regras, Universidades e Manual)
+   ===================================================================== */
+.faixa {
+  position: relative;
+  margin-top: var(--altura-cabecalho);
+  padding: clamp(56px, 8vw, 96px) 0 clamp(46px, 6vw, 72px);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(42, 86, 214, 0.55), transparent 55%),
+    linear-gradient(135deg, var(--azul-noite-2), var(--azul-noite));
+  color: var(--branco);
+  text-align: center;
+  overflow: hidden;
+}
+.faixa::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--azul-vivo), var(--ambar), var(--azul-vivo));
+}
+.faixa h1 { font-size: clamp(1.8rem, 1.2rem + 2.6vw, 2.9rem); margin-bottom: 10px; }
+.faixa p { color: rgba(255, 255, 255, 0.82); max-width: 60ch; margin: 0 auto; }
+
+/* =====================================================================
+   SECAO 6 - CONTEUDO EM GERAL (largura das secoes, titulos, paragrafos)
+   ===================================================================== */
+.secao { padding: clamp(48px, 6vw, 82px) 0; }
+.secao--cinza { background: var(--cinza-1); border-block: 1px solid var(--cinza-linha); }
+.secao__titulo {
+  font-size: clamp(1.3rem, 1rem + 1.2vw, 1.85rem);
+  color: var(--azul-noite);
+  margin-bottom: 6px;
+}
+.secao__subtitulo { color: var(--texto-suave); margin-bottom: 34px; }
+.secao__etiqueta {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--azul-royal);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* =====================================================================
+   SECAO 7 - REGRAS E CRITERIOS (pagina regras.html)
+   .criterios - a lista numerada 1 a 6
+   .avisos    - a lista de avisos (classe "destaque" realca um aviso)
+   ===================================================================== */
+.regras-caixa { max-width: 860px; margin-inline: auto; }
+.criterios { list-style: none; counter-reset: item; margin: 0; padding: 0; display: grid; gap: 12px; }
+.criterios li {
+  counter-increment: item;
+  position: relative;
+  padding: 16px 20px 16px 66px;
+  background: var(--branco);
+  border: 1px solid var(--cinza-linha);
+  border-left: 4px solid var(--azul-royal);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(10, 20, 54, 0.05);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+.criterios li:hover { transform: translateX(6px); box-shadow: 0 12px 26px rgba(10, 20, 54, 0.1); }
+.criterios li::before {
+  content: counter(item);
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--azul-royal);
+  color: var(--branco);
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.avisos { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.avisos li {
+  position: relative;
+  padding: 15px 20px 15px 48px;
+  background: var(--branco);
+  border: 1px solid var(--cinza-linha);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(10, 20, 54, 0.05);
+}
+.avisos li::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--azul-vivo);
+  box-shadow: 0 0 0 4px var(--azul-claro);
+}
+.avisos li.destaque { border-color: #cfd9f5; background: linear-gradient(180deg, #fff, var(--azul-claro)); }
+.avisos li.destaque::before { background: var(--ambar); box-shadow: 0 0 0 4px #fdf1d3; }
+.avisos b { color: var(--azul-noite); }
+
+.bloco-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 42px 0 18px;
+  font-size: 1.15rem;
+  color: var(--azul-noite);
+}
+.bloco-titulo span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cinza-linha), transparent);
+}
+.bloco-titulo::before {
+  content: "";
+  width: 8px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--azul-royal);
+}
+
+/* =====================================================================
+   SECAO 8 - UNIVERSIDADES (pagina universidades.html)
+   .grade-universidades - quantas colunas de cartoes
+   .universidade        - cada cartao com foto, endereco, fundacao e cursos
+   ===================================================================== */
+.grade-universidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+.universidade {
+  background: var(--branco);
+  border: 1px solid var(--cinza-linha);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(10, 20, 54, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+.universidade:hover { transform: translateY(-6px); box-shadow: 0 26px 50px rgba(10, 20, 54, 0.16); }
+.universidade__foto { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--azul-noite); }
+.universidade__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s cubic-bezier(0.22, 0.68, 0.24, 1);
+}
+.universidade:hover .universidade__foto img { transform: scale(1.05); }
+.universidade__foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 20, 54, 0.05), rgba(10, 20, 54, 0.45));
+}
+.universidade__sigla {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  color: var(--branco);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+.universidade__corpo { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.universidade__nome { font-size: 1.12rem; color: var(--azul-noite); margin: 0; }
+.dados { margin: 0; display: grid; gap: 10px; }
+.dados div { display: grid; grid-template-columns: 92px 1fr; gap: 10px; align-items: baseline; }
+.dados dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  font-weight: 700;
+}
+.dados dd { margin: 0; font-size: 0.95rem; }
+
+/* =====================================================================
+   SECAO 9 - MANUAL DOS UNIVERSITARIOS (pagina manual.html)
+   ===================================================================== */
+.grade-ferramentas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.ferramenta {
+  background: var(--branco);
+  border: 1px solid var(--cinza-linha);
+  border-radius: var(--raio);
+  padding: 24px;
+  box-shadow: 0 10px 26px rgba(10, 20, 54, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+.ferramenta:hover { transform: translateY(-5px); box-shadow: 0 22px 44px rgba(10, 20, 54, 0.14); border-color: #cfd9f5; }
+.ferramenta__nome { font-size: 1.06rem; color: var(--azul-royal); margin: 0 0 8px; }
+.ferramenta p { font-size: 0.95rem; color: var(--texto-suave); }
+.ferramenta__links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; padding-top: 12px; }
+.ferramenta__links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--azul-royal);
+  border: 1px solid #cfd9f5;
+  background: var(--azul-claro);
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background var(--transicao), color var(--transicao), transform var(--transicao);
+}
+.ferramenta__links a:hover { background: var(--azul-royal); color: var(--branco); transform: translateY(-2px); }
+
+/* =====================================================================
+   SECAO 10 - RODAPE (igual nas 4 paginas)
+   ===================================================================== */
+.rodape {
+  background: var(--azul-noite);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 46px 0 32px;
+  text-align: center;
+  border-top: 4px solid var(--azul-royal);
+}
+.rodape img { height: 52px; width: auto; margin-bottom: 18px; }
+.rodape nav { display: flex; gap: 8px 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+.rodape nav a { color: rgba(255, 255, 255, 0.78); text-decoration: none; font-size: 0.9rem; }
+.rodape nav a:hover { color: var(--branco); text-decoration: underline; }
+.rodape small { display: block; font-size: 0.76rem; color: rgba(255, 255, 255, 0.45); }
+
+/* =====================================================================
+   SECAO 11 - ANIMACOES
+   .revelar          - o texto que aparece ao rolar (.visivel = apareceu)
+   .transicao        - a camada azul que cobre a tela ao trocar de pagina
+   ===================================================================== */
+.revelar {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 0.68, 0.24, 1);
+  will-change: opacity, transform;
+}
+.revelar.visivel { opacity: 1; transform: none; }
+
+/* Transição entre páginas */
+.transicao {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: linear-gradient(135deg, var(--azul-noite-2), var(--azul-noite));
+  opacity: 0;
+  transition: opacity 0.32s ease;
+}
+body.saindo .transicao { opacity: 1; }
+
+/* =====================================================================
+   SECAO 12 - CELULAR (telas ate 720px) E IMPRESSAO
+   ===================================================================== */
+@media (max-width: 720px) {
+  :root { --altura-cabecalho: 80px; --raio: 16px; }
+  .cabecalho__logo img { height: 48px; }
+  .cabecalho__voltar { display: none; }
+  .heroi { padding-top: calc(var(--altura-cabecalho) + 30px); gap: 20px; }
+  .clima { padding: 20px 18px 18px; }
+  .dados div { grid-template-columns: 1fr; gap: 2px; }
+  .grade-universidades, .grade-ferramentas { gap: 20px; }
+  .botao-rota { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition-duration: 0.01s !important; }
+  .revelar { opacity: 1; transform: none; }
+  body { opacity: 1; }
+}
+
+/* Impressão */
+@media print {
+  .cabecalho, .menu, .fundo-menu, .rodape nav { display: none; }
+  body { opacity: 1; }
+  .revelar { opacity: 1; transform: none; }
+}
