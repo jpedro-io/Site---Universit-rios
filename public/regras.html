@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<!-- =====================================================================
-     ARQUIVO: public/regras.html  ->  PAGINA DE REGRAS E CRITERIOS
-     ===================================================================== -->
+
 <html lang="pt-BR">
 <head>
+
+<!-- ============ PARTE 1: <head> ============ -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Regras e Critérios - Transporte Universitário de Divisa Alegre</title>
-<meta name="description" content="Consulte as regras de utilização, ordem de prioridade e critérios do transporte universitário de Divisa Alegre para Vitória da Conquista.">
+<title>Regras e Critérios · Transporte dos Universitários de Divisa Alegre</title>
+<meta name="description" content="Critérios de lista e avisos do transporte universitário de Divisa Alegre - MG.">
 <meta name="theme-color" content="#0a1436">
 <link rel="icon" href="img/favicon.png">
 <link rel="stylesheet" href="css/style.css">
+<!-- ============ FIM DA PARTE 1 ============ -->
 </head>
 <body>
 
-<!-- CABECALHO -->
+<!-- ============ PARTE 2: CABECALHO ============ -->
 <header class="cabecalho">
   <button class="menu-botao" aria-label="Abrir menu de navegação" aria-controls="menu-principal" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -22,9 +23,12 @@
   <a class="cabecalho__logo" href="index.html" aria-label="Página inicial">
     <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
   </a>
+  <!-- Atalho "Início" que aparece no canto direito (some no celular) -->
+  <a class="cabecalho__voltar" href="index.html">Início</a>
 </header>
+<!-- ============ FIM DA PARTE 2 ============ -->
 
-<!-- MENU LATERAL -->
+<!-- ============ PARTE 3: MENU LATERAL ============ -->
 <nav class="menu" id="menu-principal" aria-label="Menu principal">
   <p class="menu__titulo">Navegação</p>
   <a href="index.html">Página inicial</a>
@@ -37,38 +41,76 @@
   </div>
 </nav>
 <button class="fundo-menu" aria-label="Fechar menu" tabindex="-1"></button>
+<!-- ============ FIM DA PARTE 3 ============ -->
 
-<main class="conteudo-interno container">
-  <header class="cabecalho-pagina">
-    <p class="cabecalho-pagina__chapeu">Diretrizes</p>
-    <h1>Regras e Critérios do Transporte</h1>
-    <p>Conheça as normas de funcionamento, a ordem de prioridade da lista e os procedimentos para garantir a organização da nossa viagem.</p>
-  </header>
+<main>
 
-  <!-- NOVO CONTAINER COM OS LINKS DE CADASTRO E WHATSAPP -->
-  <section class="card-destaque" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; margin-bottom: 2.5rem;">
-    <h2 style="font-size: 1.25rem; color: #0a1436; margin-bottom: 0.75rem;">Acesso Rápido e Cadastro</h2>
-    <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 0.95rem;">Faça o seu cadastro preenchendo o formulário oficial e entre no grupo do WhatsApp para acompanhar os avisos importantes da comissão.</p>
-    
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <a href="https://forms.gle/L5oaCDUf7RbagcjPA" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0a1436; color: #fff; border-radius: 20px; text-decoration: none; font-weight: 600;">Preencher Cadastro (Forms)</a>
-      <a href="https://chat.whatsapp.com/BdEqn0D7EPjD7T2jMUiHlj" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #25d366; color: #fff; border-radius: 20px; text-decoration: none; font-weight: 600;">Entrar no Grupo do WhatsApp</a>
+  <!-- ============ PARTE 4: TITULO DA PAGINA (faixa azul) ============ -->
+  <!-- Para mudar o texto grande, edite o <h1>; o texto menor fica no <p>. -->
+  <section class="faixa">
+    <div class="container">
+      <h1>Regras e Critérios</h1>
+      <p>Como funciona a ordem da lista e os avisos importantes para quem usa o transporte todos os dias.</p>
     </div>
   </section>
+  <!-- ============ FIM DA PARTE 4 ============ -->
 
-  <section class="bloco-texto">
-    <h2>1. Ordem de Prioridade</h2>
-    <p>A prioridade de vagas no transporte segue uma hierarquia definida para assegurar que os estudantes com aulas presenciais regulares sejam atendidos primeiro. Em caso de lotação, a ordem respeita critérios de frequência e o tipo de vínculo com a instituição de ensino.</p>
-    
-    <h2>2. Horários e Saídas</h2>
-    <p>O transporte realiza a saída na esquina da prefeitura pontualmente às 16:20. Pede-se aos estudantes que cheguem com antecedência de pelo menos dez minutos para facilitar o embarque e evitar atrasos na chegada a Vitória da Conquista.</p>
+  <section class="secao">
+    <div class="container regras-caixa">
 
-    <h2>3. Conduta e Organização</h2>
-    <p>A conservação do veículo e o respeito mútuo entre os passageiros são fundamentais. Qualquer alteração nos horários ou avisos extraordinários será comunicada diretamente através do grupo oficial de avisos.</p>
+      <!-- ============ PARTE 5: CRITERIOS DE LISTA ============ -->
+      <!-- A numeracao 1, 2, 3... e automatica: basta adicionar ou remover <li> -->
+      <div class="revelar">
+        <span class="secao__etiqueta">Ordem de prioridade</span>
+        <h2 class="secao__titulo">Critérios de Lista</h2>
+        <p class="secao__subtitulo">A ordem abaixo define quem entra primeiro na van.</p>
+      </div>
+
+      <ol class="criterios">
+        <li class="revelar">Prova / Estágio</li>
+        <li class="revelar">Quem volta / com justificativa <em>(ida não é prioridade)</em></li>
+        <li class="revelar">Quem faz uso há mais tempo do transporte</li>
+        <li class="revelar">Por ordem de semestre (do 10° ao 1°)</li>
+        <li class="revelar">Primeira graduação (tem que ser graduação)</li>
+        <li class="revelar">Utilize mais dias na semana</li>
+      </ol>
+      <!-- ============ FIM DA PARTE 5 ============ -->
+
+      <!-- Titulo com a linha ao lado (o <span> vazio desenha a linha) -->
+      <div class="revelar">
+        <h3 class="bloco-titulo">Avisos<span></span></h3>
+      </div>
+
+      <!-- ============ PARTE 6: AVISOS ============ -->
+      <!-- Dica: coloque a classe "destaque" no <li> para realcar o aviso em azul/amarelo -->
+      <ul class="avisos">
+        <li class="revelar destaque">Saída da esquina da prefeitura às <b>16:20</b>.</li>
+        <li class="revelar">Por favor, colocar o nome na lista até as <b>10h da manhã</b>. Aqueles que colocarem após as 10h sem justificativa coerente, não terão direito aos critérios.</li>
+        <li class="revelar">A entrada no transporte é por ordem de chegada ao ponto e volta no mesmo assento que foi.</li>
+        <li class="revelar">Grupo exclusivo para uso dos universitários e motorista.</li>
+        <li class="revelar">Carona não é prioridade; universitários entram na van antes de carona.</li>
+        <li class="revelar destaque">Alunos residentes e com documento de Divisa ou que possuem o documento em Divisa: <b>prioridade máxima</b>.</li>
+        <li class="revelar">Alunos residentes em Divisa mas sem documento: <b>prioridade média</b>.</li>
+        <li class="revelar">Alunos residentes em outras cidades e sem documento de Divisa: <b>carona</b>.</li>
+      </ul>
+      <!-- ============ FIM DA PARTE 6 ============ -->
+
+      <!-- ============ INICIO DOS LINKS ADICIONADOS ============ -->
+      <div class="revelar" style="margin-top: 2rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem;">
+        <h3 style="font-size: 1.25rem; color: #0a1436; margin-bottom: 0.75rem;">Acesso Rápido e Cadastro</h3>
+        <p style="color: #4a5568; margin-bottom: 1.25rem; font-size: 0.95rem;">Preencha o formulário de cadastro e entre no grupo do WhatsApp para acompanhar os avisos importantes.</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://forms.gle/L5oaCDUf7RbagcjPA" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0a1436; color: #fff; border-radius: 20px; text-decoration: none; font-weight: 600;">Preencher Cadastro (Forms)</a>
+          <a href="https://chat.whatsapp.com/BdEqn0D7EPjD7T2jMUiHlj" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #25d366; color: #fff; border-radius: 20px; text-decoration: none; font-weight: 600;">Entrar no Grupo do WhatsApp</a>
+        </div>
+      </div>
+      <!-- ============ FIM DOS LINKS ADICIONADOS ============ -->
+
+    </div>
   </section>
 </main>
 
-<!-- RODAPE -->
+<!-- ============ PARTE 7: RODAPE ============ -->
 <footer class="rodape">
   <div class="container">
     <img src="img/logo-contorno.png" alt="Comissão de Transporte dos Universitários de Divisa Alegre - MG">
@@ -81,6 +123,7 @@
     <small>Comissão de Transporte dos Universitários de Divisa Alegre - MG · <span data-ano></span></small>
   </div>
 </footer>
+<!-- ============ FIM DA PARTE 7 ============ -->
 
 <div class="transicao" aria-hidden="true"></div>
 <script src="js/main.js"></script>
