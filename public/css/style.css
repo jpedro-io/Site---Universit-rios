@@ -226,7 +226,7 @@ body.menu-aberto .fundo-menu { opacity: 1; pointer-events: auto; }
 .heroi__frase {
   color: var(--branco);
   font-size: clamp(1.15rem, 1rem + 1.4vw, 1.75rem);
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.01em;
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
   margin: 0;
